@@ -12,7 +12,6 @@ export class Vehiculo{
 
     constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,observaciones:string) {
 
-        this.nroVehiculo = nroVehiculo;
         this.nroVehiculo=nroVehiculo;
         this.marca=marca;
         this.modelo=modelo;

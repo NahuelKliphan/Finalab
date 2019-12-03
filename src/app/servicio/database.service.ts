@@ -41,6 +41,13 @@ export class DatabaseService {
     );
   }
 
+  actualizarVehiculo(vehiculo: Vehiculo) {
+    this._httpClient.put(`http://localhost:3000/vehiculos/${vehiculo.id}`, vehiculo)
+    .subscribe(
+      () => this.getVehiculos()
+    );
+  }
+
 
 
 
