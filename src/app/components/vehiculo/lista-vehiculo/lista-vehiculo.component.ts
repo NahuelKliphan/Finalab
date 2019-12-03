@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter,Output, OnInit } from '@angular/core';
+import { DatabaseService } from 'src/app/servicio/database.service';
 
 @Component({
   selector: 'app-lista-vehiculo',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaVehiculoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private database: DatabaseService) { }
 
   ngOnInit() {
+    this.database.getVehiculos();
   }
+
+  busqueda: string = "";
+
+  @Output() VehiculoAmodificar = new EventEmitter()
+
+
+
 
 }

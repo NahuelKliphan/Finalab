@@ -1,1 +1,19 @@
+<h5>Vehiculos en el sistema:</h5>
+<div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Buscar">
+</div>
+<ul class="list-group">
+    <button class="list-group-item list-group-item-action"
+        *ngFor="let unVehiculo of database.listadoVehiculos | buscar:busqueda">
+        <b>Numero:</b> {{ unVehiculo.nroVehiculo }} <br>
+        <b>Modelo: </b> {{unVehiculo.modelo}} <br>
+        <b>Marca:</b> {{ unVehiculo.marca }} <br>
+        <button class="btn btn-danger darespacio float-right" (click)="eliminarVehiculo(unVehiculo.nroVehiculo)">Borrar</button>
+        <button class="darespacio btn btn-dark float-right" (click)="solicitarModificacion(unVehiculo)">Editar</button>
+        <b>Fecha Compra:</b> {{ unVehiculo.fechaCompra }} <br>
+        <b>Estado General:</b> {{ unVehiculo.estado }} <br>
+        <b>Patente:</b> {{ unVehiculo.patente }}
 
+
+    </button>
+</ul>
