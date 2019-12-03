@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from 'src/app/model/vehiculo';
-import {DatabaseService} from 'src/app/servicio/database.service'
+import { DatabaseService } from 'src/app/servicio/database.service'
 
 @Component({
   selector: 'app-form-vehiculo',
@@ -14,29 +14,56 @@ export class FormVehiculoComponent implements OnInit {
   ngOnInit() {
   }
 
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '');
 
-  unVehiculo:Vehiculo = new Vehiculo(Vehiculo.nro,'Ford','Raptor', new Date("2015-03-25") ,'nuevo','AE123AA', 'new ImageData(2,2)','Todo bien');
+  editar: boolean = false;
 
-  editar : boolean = false ;
+  addVehiculo() {
 
-  addVehiculo(){
+    if(this.formCompleto())
+    {
 
-    
-      if(this.editar == false)
-      {
-        this.database.agregarVehiculo(new Vehiculo(Vehiculo.nro,'Ford','Raptor', new Date("2015-03-25") ,'nuevo','AE123AA', 'new ImageData(2,2)','Todo bien'));
+      if (this.editar == false) {
+        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto, this.unVehiculo.observaciones));
+        this.vaciar();
       }
-      else
-      {
-
+      else {
+        
       }
 
-      this.editar = false;
+    }
+    else
+    {
+      alert('Faltan datos')
+    }
 
-      };
-    
-    
+    this.editar = false;
+
+
   }
+
+
+  formCompleto(){
+
+    if(this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' )
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+
+  }
+
+  vaciar(){
+    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '');
+  }
+
+
+}
+
+
 
 
 

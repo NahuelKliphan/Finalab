@@ -19,14 +19,26 @@ export class DatabaseService {
   getVehiculos() {
     this._httpClient.get<Vehiculo[]>('http://localhost:3000/vehiculos/')
       .subscribe(
-        (data) =>  this.listadoVehiculos =  data 
+        (data) => this.listadoVehiculos = data
       );
   }
 
   agregarVehiculo(nuevoVehiculo: Vehiculo) {
-        this._httpClient.post('http://localhost:3000/vehiculos/', nuevoVehiculo).subscribe(() => {
-          this.getVehiculos();
-        });
+    this._httpClient.post('http://localhost:3000/vehiculos/', nuevoVehiculo).subscribe(() => {
+      this.getVehiculos();
+    });
+  }
+
+
+  borrarVehiculo(id: number) {
+    console.log(id);
+    this._httpClient.delete(`http://localhost:3000/vehiculos/${id}`).subscribe(
+      () => {
+        this.getVehiculos()
+    
+      }
+
+    );
   }
 
 

@@ -1,27 +1,15 @@
 {
   "vehiculos": [
     {
-      "nroVehiculo": 2,
-      "marca": "Ford",
-      "modelo": "Raptor",
-      "fechaCompra": "2015-03-25T00:00:00.000Z",
-      "estado": "nuevo",
-      "patente": "AE123AA",
-      "foto": "new ImageData(2,2)",
-      "observaciones": "Todo bien",
+      "nroVehiculo": "2",
+      "marca": "2",
+      "modelo": "2",
+      "fechaCompra": "2019-12-11",
+      "estado": "Muy Bueno",
+      "patente": "2",
+      "foto": "",
+      "observaciones": "",
       "id": 1
-    },
-    {
-      "nroVehiculo": 3,
-      "marca": "Ford",
-      "modelo": "Raptor",
-      "fechaCompra": "2015-03-25T00:00:00.000Z",
-      "estado": "nuevo",
-      "patente": "AE123AA",
-      "foto": "new ImageData(2,2)",
-      "observaciones": "Todo bien",
-      "id": 2
     }
-  
   ]
 }
