@@ -1,0 +1,26 @@
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" [(ngModel)]="unTaller.nombre" placeholder="Ingrese nombre">
+</div>
+
+<div class="form-group">
+    <label for="direccion">Dirección</label>
+    <input type="text" class="form-control" name="direccion" placeholder="Ingrese dirección"
+        [(ngModel)]="unTaller.direccion">
+</div>
+
+<div class="form-group">
+    <label for="telefono">Teléfono</label>
+    <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono"
+        [(ngModel)]="unTaller.telefono">
+</div>
+
+<div class="form-group">
+    <label for="encargado">Encargado</label>
+    <input type="text" class="form-control" name="encargado" placeholder="Ingrese encargado"
+        [(ngModel)]="unTaller.encargado">
+</div>
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="addTaller()">Guardar</button>
+</div>

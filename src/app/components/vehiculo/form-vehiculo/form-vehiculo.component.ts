@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehiculo } from 'src/app/model/vehiculo';
+import { Vehiculo } from 'src/app/model/Vehiculo';
 import { DatabaseService } from 'src/app/servicio/database.service'
-import { CamionGeneral } from 'src/app/model/CamionGeneral';
+
 
 @Component({
   selector: 'app-form-vehiculo',

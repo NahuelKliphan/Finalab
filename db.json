@@ -12,5 +12,14 @@
       "observaciones": "",
       "id": 1
     }
+  ],
+  "talleres": [
+    {
+      "nombre": "El Rulo",
+      "direccion": "Aldea Brasilera",
+      "telefono": "54385721",
+      "encargado": "Rulo",
+      "id": 1
+    }
   ]
 }

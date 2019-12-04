@@ -1,6 +1,6 @@
 import { Component, EventEmitter,Output, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/servicio/database.service';
-import { Vehiculo } from 'src/app/model/vehiculo';
+import { Vehiculo } from 'src/app/model/Vehiculo';
 
 @Component({
   selector: 'app-lista-vehiculo',

@@ -12,6 +12,9 @@ import { FormVehiculoComponent } from './components/vehiculo/form-vehiculo/form-
 import { FormsModule } from '@angular/forms';
 import { Buscar } from './pipes/buscar';
 import { FormCamionGeneralComponent } from './components/vehiculo/form-camion-general/form-camion-general.component';
+import { TallerComponent } from './components/taller/taller/taller.component';
+import { FormTallerComponent } from './components/taller/form-taller/form-taller.component';
+import { ListaTallerComponent } from './components/taller/lista-taller/lista-taller.component';
 
 const routes : Routes = [
   {
@@ -21,6 +24,10 @@ const routes : Routes = [
   {
     path: 'vehiculo',
     component: VehiculoComponent
+  },
+  {
+    path: 'taller',
+    component: TallerComponent
   }
 ];
 
@@ -33,7 +40,10 @@ const routes : Routes = [
     ListaVehiculoComponent,
     FormVehiculoComponent,
     Buscar,
-    FormCamionGeneralComponent
+    FormCamionGeneralComponent,
+    TallerComponent,
+    FormTallerComponent,
+    ListaTallerComponent
   ],
   imports: [
     BrowserModule,

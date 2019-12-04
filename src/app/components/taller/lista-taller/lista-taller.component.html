@@ -1,0 +1,15 @@
+<h5>Talleres en el sistema:</h5>
+<div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Buscar">
+</div>
+<ul class="list-group">
+    <button class="list-group-item list-group-item-action"
+        *ngFor="let unTaller of database.listadoTalleres | buscar:busqueda">
+        <b>Nombre:</b> {{ unTaller.nombre }} <br>
+        <button class="btn btn-danger darespacio float-right" (click)="eliminarTaller(unTaller.id)">Borrar</button>
+        <button class="darespacio btn btn-dark float-right" (click)="solicitarModificacion(unTaller)">Editar</button>
+        <b>Dirección:</b> {{ unTaller.direccion }} <br>
+        <b>Teléfono: </b> {{unTaller.telefono}} <br>
+        <b>Encargado:</b> {{ unTaller.encargado }} <br>
+    </button>
+</ul>
