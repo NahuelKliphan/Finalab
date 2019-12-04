@@ -8,9 +8,10 @@ export class Vehiculo{
     estado:string;
     patente:string;
     foto:string;
+    tipo:string;
     observaciones:string;
 
-    constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,observaciones:string) {
+    constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,tipo:string,observaciones:string) {
 
         this.nroVehiculo=nroVehiculo;
         this.marca=marca;
@@ -19,6 +20,7 @@ export class Vehiculo{
         this.estado=estado;
         this.patente=patente;
         this.foto=foto;
+        this.tipo=tipo;
         this.observaciones=observaciones;
     }
 

@@ -11,6 +11,7 @@ import { ListaVehiculoComponent } from './components/vehiculo/lista-vehiculo/lis
 import { FormVehiculoComponent } from './components/vehiculo/form-vehiculo/form-vehiculo.component';
 import { FormsModule } from '@angular/forms';
 import { Buscar } from './pipes/buscar';
+import { FormCamionGeneralComponent } from './components/vehiculo/form-camion-general/form-camion-general.component';
 
 const routes : Routes = [
   {
@@ -31,7 +32,8 @@ const routes : Routes = [
     HomeComponent,
     ListaVehiculoComponent,
     FormVehiculoComponent,
-    Buscar
+    Buscar,
+    FormCamionGeneralComponent
   ],
   imports: [
     BrowserModule,

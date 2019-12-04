@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Vehiculo } from '../model/vehiculo';
+import { CamionGeneral } from '../model/CamionGeneral';
 
 
 @Injectable({
@@ -12,7 +13,6 @@ export class DatabaseService {
 
 
   listadoVehiculos: Vehiculo[] = [];
-
 
   //Vehiculos
 
@@ -31,7 +31,6 @@ export class DatabaseService {
 
 
   borrarVehiculo(id: number) {
-    console.log(id);
     this._httpClient.delete(`http://localhost:3000/vehiculos/${id}`).subscribe(
       () => {
         this.getVehiculos()
@@ -48,6 +47,15 @@ export class DatabaseService {
     );
   }
 
+
+  //Camion General
+
+  agregarCamionGeneral(nuevoCamion: CamionGeneral) {
+    this._httpClient.post('http://localhost:3000/camionesGenerales/', nuevoCamion).subscribe(() => {
+      this.getVehiculos();
+    });
+
+  }
 
 
 

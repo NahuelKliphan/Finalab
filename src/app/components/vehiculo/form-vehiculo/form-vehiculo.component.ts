@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from 'src/app/model/vehiculo';
 import { DatabaseService } from 'src/app/servicio/database.service'
+import { CamionGeneral } from 'src/app/model/CamionGeneral';
 
 @Component({
   selector: 'app-form-vehiculo',
@@ -14,9 +15,11 @@ export class FormVehiculoComponent implements OnInit {
   ngOnInit() {
   }
 
-  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '');
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '','');
 
   editar: boolean = false;
+
+  //this.database.agregarCamionGeneral(new CamionGeneral(this.unVehiculo.nroVehiculo,this.unVehiculo.marca,this.unVehiculo.modelo,this.unVehiculo.fechaCompra,this.unVehiculo.estado,this.unVehiculo.patente,this.unVehiculo.foto,this.unVehiculo.tipo,this.unVehiculo.observaciones,this.camionGeneral.capacidadCarga,this.camionGeneral.cantidadRuedas,this.camionGeneral.acoplado));
 
   addVehiculo() {
 
@@ -24,7 +27,8 @@ export class FormVehiculoComponent implements OnInit {
     {
 
       if (this.editar == false) {
-        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto, this.unVehiculo.observaciones));
+
+        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto,this.unVehiculo.tipo, this.unVehiculo.observaciones));
       }
       else 
       {
@@ -37,12 +41,12 @@ export class FormVehiculoComponent implements OnInit {
           "patente":this.unVehiculo.patente,
           "foto":this.unVehiculo.foto,
           "observaciones":this.unVehiculo.observaciones,
-          "id":this.unVehiculo.id
+          "id":this.unVehiculo.id,
+          "tipo": this.unVehiculo.tipo
         });
       }
 
       this.vaciar();
-
     }
     else
     {
@@ -59,7 +63,7 @@ export class FormVehiculoComponent implements OnInit {
 
   formCompleto(){
 
-    if(this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' )
+    if(this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' && this.unVehiculo.tipo != '')
     {
       return true;
     }
@@ -71,7 +75,7 @@ export class FormVehiculoComponent implements OnInit {
   }
 
   vaciar(){
-    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '');
+    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '','');
   }
 
 

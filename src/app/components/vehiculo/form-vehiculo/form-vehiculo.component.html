@@ -2,7 +2,8 @@
 
     <div class="form-group col-6">
         <label for="numero">Numero</label>
-        <input type="text" class="form-control" name="numero" [(ngModel)]="unVehiculo.nroVehiculo" placeholder="Ingrese numero">
+        <input type="number" class="form-control" name="numero" [(ngModel)]="unVehiculo.nroVehiculo"
+            placeholder="Ingrese numero">
     </div>
 
     <div class="form-group col-6">
@@ -48,9 +49,26 @@
 
 </div>
 
-<div class="form-group">
-    <label for="foto">Foto</label>
-    <input type="file" class="form-control-file" name="foto">
+<div class="row">
+
+    <div class="form-group col-6">
+        <label for="foto">Foto</label>
+        <input type="file" class="form-control-file" name="foto">
+    </div>
+
+    <div class="form-group col-6">
+        <label for="tipo">Tipo</label>
+        <select class="form-control" name="estado" [(ngModel)]="unVehiculo.tipo">
+            <option>Auto</option>
+            <option>Camion general</option>
+            <option>Camion volcador</option>
+        </select>
+    </div>
+
+</div>
+
+<div [hidden]="unVehiculo.tipo !== 'Camion general'">
+    <app-form-camion-general  #formCamionGeneral></app-form-camion-general>
 </div>
 
 <div class="form-group">
@@ -59,7 +77,5 @@
 </div>
 
 <div class="text-center">
-
     <button type="button" class="btn btn-primary" (click)="addVehiculo()">Guardar</button>
-
 </div>

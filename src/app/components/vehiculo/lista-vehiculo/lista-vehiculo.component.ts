@@ -27,8 +27,4 @@ export class ListaVehiculoComponent implements OnInit {
   solicitarModificacion(unVehiculo:Vehiculo){
     this.VehiculoAmodificar.emit(unVehiculo);
   }
-
-
-
-
 }
