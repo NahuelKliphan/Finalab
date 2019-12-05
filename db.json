@@ -1,6 +1,35 @@
 {
-  "vehiculos": [],
-  "camionesGenerales": [],
+  "vehiculos": [
+    {
+      "nroVehiculo": 2,
+      "marca": "2",
+      "modelo": "2",
+      "fechaCompra": "2019-12-11",
+      "estado": "Muy Bueno",
+      "patente": "2",
+      "foto": "",
+      "tipo": "Auto",
+      "observaciones": "",
+      "id": 1
+    }
+  ],
+  "camionesGenerales": [
+    {
+      "nroVehiculo": 2,
+      "marca": "2",
+      "modelo": "2",
+      "fechaCompra": "2019-12-04",
+      "estado": "Nuevo",
+      "patente": "2",
+      "foto": "",
+      "tipo": "Camion general",
+      "observaciones": "12312",
+      "capacidadCarga": 2,
+      "cantidadRuedas": 2,
+      "acoplado": "Si",
+      "id": 1
+    }
+  ],
   "camionesVolcadores": [],
   "talleres": []
 }

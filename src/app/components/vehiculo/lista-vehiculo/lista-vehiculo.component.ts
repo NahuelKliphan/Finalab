@@ -27,4 +27,9 @@ export class ListaVehiculoComponent implements OnInit {
   solicitarModificacion(unVehiculo:Vehiculo){
     this.VehiculoAmodificar.emit(unVehiculo);
   }
+
+  verDetalle(unVehiculo:Vehiculo){
+    window.location.href = '/verVehiculo';
+    this.database.set(unVehiculo);
+  }
 }

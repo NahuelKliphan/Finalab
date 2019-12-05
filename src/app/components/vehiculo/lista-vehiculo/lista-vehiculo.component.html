@@ -9,7 +9,7 @@
         <b>Numero:</b> {{ unVehiculo.nroVehiculo }} <br>
         <button class="btn btn-danger darespacio float-right" (click)="eliminarVehiculo(unVehiculo.id)">Borrar</button>
         <button class="darespacio btn btn-dark float-right" (click)="solicitarModificacion(unVehiculo)">Editar</button>
-        <button class="darespacio btn btn-info float-right">Ver</button>
+        <button class="darespacio btn btn-info float-right" (click)= "verDetalle(unVehiculo)">Ver</button>
         <b>Modelo: </b> {{unVehiculo.modelo}} <br>
         <b>Marca:</b> {{ unVehiculo.marca }} <br>
         <b>Tipo:</b> {{ unVehiculo.tipo }} <br>

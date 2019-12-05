@@ -6,6 +6,8 @@ import { Taller } from '../model/Taller';
 import { CamionVolcador } from '../model/CamionVolcador';
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,17 @@ export class DatabaseService {
 
 
   listadoVehiculos: Vehiculo[] = [];
-  listadoTalleres: Taller[] = []
+  listadoTalleres: Taller[] = [];
+
+  vehiculo: Vehiculo;
+
+  set(x : Vehiculo){
+    this.vehiculo = x;
+  }
+
+  get(){
+    return this.vehiculo;
+  }
 
   //Vehiculos
 

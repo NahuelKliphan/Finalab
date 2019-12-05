@@ -16,6 +16,7 @@ import { TallerComponent } from './components/taller/taller/taller.component';
 import { FormTallerComponent } from './components/taller/form-taller/form-taller.component';
 import { ListaTallerComponent } from './components/taller/lista-taller/lista-taller.component';
 import { FormCamionVolcadorComponent } from './components/vehiculo/form-camion-volcador/form-camion-volcador.component';
+import { VistaVehiculoComponent } from './components/vehiculo/vista-vehiculo/vista-vehiculo.component';
 
 const routes : Routes = [
   {
@@ -29,6 +30,10 @@ const routes : Routes = [
   {
     path: 'taller',
     component: TallerComponent
+  },
+  {
+    path:'verVehiculo',
+    component :VistaVehiculoComponent
   }
 ];
 
@@ -45,7 +50,8 @@ const routes : Routes = [
     TallerComponent,
     FormTallerComponent,
     ListaTallerComponent,
-    FormCamionVolcadorComponent
+    FormCamionVolcadorComponent,
+    VistaVehiculoComponent
   ],
   imports: [
     BrowserModule,
