@@ -1,4 +1,4 @@
-import { Component, EventEmitter,Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/servicio/database.service';
 import { Vehiculo } from 'src/app/model/Vehiculo';
 
@@ -19,17 +19,17 @@ export class ListaVehiculoComponent implements OnInit {
 
   @Output() VehiculoAmodificar = new EventEmitter();
 
-  eliminarVehiculo(id:number){
+  eliminarVehiculo(id: number) {
     this.database.borrarVehiculo(id);
     this.database.getVehiculos();
   }
 
-  solicitarModificacion(unVehiculo:Vehiculo){
+  solicitarModificacion(unVehiculo: Vehiculo) {
     this.VehiculoAmodificar.emit(unVehiculo);
   }
 
-  verDetalle(unVehiculo:Vehiculo){
+  verDetalle(id: number) {
     window.location.href = '/verVehiculo';
-    this.database.set(unVehiculo);
+    localStorage.setItem('id', id.toString());
   }
 }

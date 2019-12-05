@@ -13,18 +13,12 @@ export class VistaVehiculoComponent implements OnInit {
 
   constructor(private database: DatabaseService) { }
 
+  unVehiculo: Vehiculo;
+
   ngOnInit() {
-
+    this.database.getVehiculoById(localStorage.getItem('id'));
+    this.database.getCamionGeneralById(localStorage.getItem('id'));
+    this.database.getCamionVolcadorById(localStorage.getItem('id'));
   }
-
-  Probar(){
-
-    console.log(this.database.get());
-
-  }
-
-  unVehiculo: Vehiculo; //new Vehiculo(1,'Ford','Raptor',new Date(),'Nuevo','AD123AA','foto','Auto','Excelente estado');
-  unCamionGeneral: CamionGeneral = new CamionGeneral(1,'Ford','Raptor',new Date(),'Nuevo','AD123AA','foto','Auto','Excelente estado',1,1,'Si',1);
-  unCamionVolcador: CamionVolcador =null;// new CamionVolcador(1,'Ford','Raptor',new Date(),'Nuevo','AD123AA','foto','Auto','Excelente estado',1,1,1);
 
 }
