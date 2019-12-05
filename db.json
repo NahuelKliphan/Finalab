@@ -1,25 +1,6 @@
 {
-  "vehiculos": [
-    {
-      "nroVehiculo": 2,
-      "marca": "2",
-      "modelo": "2",
-      "fechaCompra": "2019-12-03",
-      "estado": "Bueno",
-      "patente": "2",
-      "foto": "",
-      "tipo": "Camion general",
-      "observaciones": "",
-      "id": 1
-    }
-  ],
-  "talleres": [
-    {
-      "nombre": "El Rulo",
-      "direccion": "Aldea Brasilera",
-      "telefono": "54385721",
-      "encargado": "Rulo",
-      "id": 1
-    }
-  ]
+  "vehiculos": [],
+  "camionesGenerales": [],
+  "camionesVolcadores": [],
+  "talleres": []
 }

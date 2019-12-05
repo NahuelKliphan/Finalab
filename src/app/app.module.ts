@@ -15,6 +15,7 @@ import { FormCamionGeneralComponent } from './components/vehiculo/form-camion-ge
 import { TallerComponent } from './components/taller/taller/taller.component';
 import { FormTallerComponent } from './components/taller/form-taller/form-taller.component';
 import { ListaTallerComponent } from './components/taller/lista-taller/lista-taller.component';
+import { FormCamionVolcadorComponent } from './components/vehiculo/form-camion-volcador/form-camion-volcador.component';
 
 const routes : Routes = [
   {
@@ -43,7 +44,8 @@ const routes : Routes = [
     FormCamionGeneralComponent,
     TallerComponent,
     FormTallerComponent,
-    ListaTallerComponent
+    ListaTallerComponent,
+    FormCamionVolcadorComponent
   ],
   imports: [
     BrowserModule,

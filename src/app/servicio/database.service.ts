@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Vehiculo } from '../model/Vehiculo';
 import { CamionGeneral } from '../model/CamionGeneral';
 import { Taller } from '../model/Taller';
+import { CamionVolcador } from '../model/CamionVolcador';
 
 
 @Injectable({
@@ -58,42 +59,51 @@ export class DatabaseService {
 
   }
 
-    //Taller
-    
+  //Camion Volcador
+
+  agregarCamionVolcador(nuevoCamion: CamionVolcador) {
+    this._httpClient.post('http://localhost:3000/camionesVolcadores/', nuevoCamion).subscribe(() => {
+      this.getVehiculos();
+    });
+
+  }
+
+  //Taller
+
 
   getTalleres() {
-      this._httpClient.get<Taller[]>('http://localhost:3000/talleres/')
-        .subscribe(
-          (data) => this.listadoTalleres = data
-        );
-    }
-  
-    agregarTaller(nuevoTaller: Taller) {
-      this._httpClient.post('http://localhost:3000/talleres/', nuevoTaller).subscribe(() => {
-        this.getTalleres()
-      });
-    }
-  
-  
-    borrarTaller(id: number) {
-      this._httpClient.delete(`http://localhost:3000/talleres/${id}`).subscribe(
-        () => {
-          this.getTalleres()
-        }
-  
+    this._httpClient.get<Taller[]>('http://localhost:3000/talleres/')
+      .subscribe(
+        (data) => this.listadoTalleres = data
       );
-    }
-  
-    actualizarTaller(taller: Taller) {
-      this._httpClient.put(`http://localhost:3000/talleres/${taller.id}`, taller)
-        .subscribe(
-          () => this.getTalleres()
-        );
-    }
+  }
+
+  agregarTaller(nuevoTaller: Taller) {
+    this._httpClient.post('http://localhost:3000/talleres/', nuevoTaller).subscribe(() => {
+      this.getTalleres()
+    });
+  }
+
+
+  borrarTaller(id: number) {
+    this._httpClient.delete(`http://localhost:3000/talleres/${id}`).subscribe(
+      () => {
+        this.getTalleres()
+      }
+
+    );
+  }
+
+  actualizarTaller(taller: Taller) {
+    this._httpClient.put(`http://localhost:3000/talleres/${taller.id}`, taller)
+      .subscribe(
+        () => this.getTalleres()
+      );
+  }
 
 
 
-  
+
 
 
 

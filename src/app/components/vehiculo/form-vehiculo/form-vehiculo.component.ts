@@ -19,8 +19,6 @@ export class FormVehiculoComponent implements OnInit {
 
   editar: boolean = false;
 
-  //this.database.agregarCamionGeneral(new CamionGeneral(this.unVehiculo.nroVehiculo,this.unVehiculo.marca,this.unVehiculo.modelo,this.unVehiculo.fechaCompra,this.unVehiculo.estado,this.unVehiculo.patente,this.unVehiculo.foto,this.unVehiculo.tipo,this.unVehiculo.observaciones,this.camionGeneral.capacidadCarga,this.camionGeneral.cantidadRuedas,this.camionGeneral.acoplado));
-
   addVehiculo() {
 
     if(this.formCompleto())
