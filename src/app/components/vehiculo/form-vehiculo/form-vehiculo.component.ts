@@ -15,43 +15,43 @@ export class FormVehiculoComponent implements OnInit {
   ngOnInit() {
   }
 
-  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '','',null,null,null);
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '', '', null, null, null);
 
   editar: boolean = false;
 
+  public respuestaImagenEnviada;
+  public resultadoCarga;
+
   addVehiculo() {
 
-    if(this.formCompleto())
-    {
+    if (this.formCompleto()) {
 
       if (this.editar == false) {
 
-        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto,this.unVehiculo.tipo, this.unVehiculo.observaciones, 
-          this.unVehiculo.acoplado,this.unVehiculo.cantidadRuedas,this.unVehiculo.capacidadCarga));
+        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto, this.unVehiculo.tipo, this.unVehiculo.observaciones,
+          this.unVehiculo.acoplado, this.unVehiculo.cantidadRuedas, this.unVehiculo.capacidadCarga));
       }
-      else 
-      {
+      else {
         this.database.actualizarVehiculo({
-          "nroVehiculo":this.unVehiculo.nroVehiculo,
-          "marca":this.unVehiculo.marca,
-          "modelo":this.unVehiculo.modelo,
-          "fechaCompra":this.unVehiculo.fechaCompra,
-          "estado":this.unVehiculo.estado,
-          "patente":this.unVehiculo.patente,
-          "foto":this.unVehiculo.foto,
-          "observaciones":this.unVehiculo.observaciones,
-          "id":this.unVehiculo.id,
+          "nroVehiculo": this.unVehiculo.nroVehiculo,
+          "marca": this.unVehiculo.marca,
+          "modelo": this.unVehiculo.modelo,
+          "fechaCompra": this.unVehiculo.fechaCompra,
+          "estado": this.unVehiculo.estado,
+          "patente": this.unVehiculo.patente,
+          "foto": this.unVehiculo.foto,
+          "observaciones": this.unVehiculo.observaciones,
+          "id": this.unVehiculo.id,
           "tipo": this.unVehiculo.tipo,
-          "acoplado":this.unVehiculo.acoplado,
-          "cantidadRuedas":this.unVehiculo.cantidadRuedas,
+          "acoplado": this.unVehiculo.acoplado,
+          "cantidadRuedas": this.unVehiculo.cantidadRuedas,
           "capacidadCarga": this.unVehiculo.capacidadCarga
         });
       }
 
       this.vaciar();
     }
-    else
-    {
+    else {
       alert('Faltan datos')
     }
 
@@ -63,21 +63,25 @@ export class FormVehiculoComponent implements OnInit {
     this.unVehiculo = unVehiculo;
   }
 
-  formCompleto(){
+  public cargandoImagen(files: FileList) {
 
-    if(this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' && this.unVehiculo.tipo != '')
-    {
+    this.unVehiculo.foto = files[0].name;
+
+  }
+
+  formCompleto() {
+
+    if (this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' && this.unVehiculo.tipo != '') {
       return true;
     }
-    else
-    {
+    else {
       return false;
     }
 
   }
 
-  vaciar(){
-    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '','',null,null,null);
+  vaciar() {
+    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '', '', null, null, null);
   }
 
 

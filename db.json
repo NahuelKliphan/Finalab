@@ -1,19 +1,19 @@
 {
   "vehiculos": [
     {
-      "nroVehiculo": 1,
-      "marca": "1",
-      "modelo": "1",
+      "nroVehiculo": 2,
+      "marca": "2",
+      "modelo": "2",
       "fechaCompra": "2019-12-05",
       "estado": "Muy Bueno",
-      "patente": "1",
+      "patente": "2",
       "foto": "",
-      "observaciones": "",
-      "id": 1,
-      "tipo": "Camion general",
-      "acoplado": "No",
-      "cantidadRuedas": 2,
-      "capacidadCarga": 2
+      "tipo": "Auto",
+      "observaciones": "2",
+      "acoplado": null,
+      "cantidadRuedas": null,
+      "capacidadCarga": null,
+      "id": 1
     }
   ],
   "talleres": [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/servicio/database.service';
 import { Vehiculo } from 'src/app/model/Vehiculo';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-vista-vehiculo',
@@ -13,8 +14,10 @@ export class VistaVehiculoComponent implements OnInit {
 
   unVehiculo: Vehiculo;
 
-  ngOnInit() {
-    this.database.getVehiculoById(localStorage.getItem('id'));
+  ngOnInit(){
+
+    this.database.getVehiculoById(localStorage.getItem('id')).subscribe(data => this.unVehiculo = data);
+
   }
 
 }

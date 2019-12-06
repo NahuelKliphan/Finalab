@@ -4,7 +4,6 @@ import { Vehiculo } from '../model/Vehiculo';
 import { Taller } from '../model/Taller';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +15,6 @@ export class DatabaseService {
   listadoVehiculos: Vehiculo[] = [];
   listadoTalleres: Taller[] = [];
 
-  unVehiculo: Vehiculo;
-
   //Vehiculos
 
   getVehiculos() {
@@ -28,8 +25,7 @@ export class DatabaseService {
   }
 
   getVehiculoById(id: string) {
-    this._httpClient.get<Vehiculo>(`http://localhost:3000/vehiculos/${id}`)
-    .subscribe( (data) => {this.unVehiculo = data; } );
+    return this._httpClient.get<Vehiculo>(`http://localhost:3000/vehiculos/${id}`);
   }
 
   agregarVehiculo(nuevoVehiculo: Vehiculo) {
@@ -89,13 +85,5 @@ export class DatabaseService {
         () => this.getTalleres()
       );
   }
-
-
-
-
-
-
-
-
 
 }
