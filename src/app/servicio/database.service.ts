@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Vehiculo } from '../model/Vehiculo';
-import { CamionGeneral } from '../model/CamionGeneral';
 import { Taller } from '../model/Taller';
-import { CamionVolcador } from '../model/CamionVolcador';
+
 
 
 @Injectable({
@@ -18,8 +17,6 @@ export class DatabaseService {
   listadoTalleres: Taller[] = [];
 
   unVehiculo: Vehiculo;
-  unCamionGeneral: CamionGeneral;
-  unCamionVolcador: CamionVolcador;
 
   //Vehiculos
 
@@ -59,34 +56,7 @@ export class DatabaseService {
       );
   }
 
-  //Camion General
-
-  agregarCamionGeneral(nuevoCamion: CamionGeneral) {
-    this._httpClient.post('http://localhost:3000/camionesGenerales/', nuevoCamion).subscribe(() => {
-      this.getVehiculos();
-    });
-
-  }
-
-  getCamionGeneralById(id: string) {
-    this._httpClient.get<CamionGeneral>(`http://localhost:3000/camionesGenerales/${id}`)
-    .subscribe( (data) => {this.unCamionGeneral = data; } );
-  }
-
-  //Camion Volcador
-
-  agregarCamionVolcador(nuevoCamion: CamionVolcador) {
-    this._httpClient.post('http://localhost:3000/camionesVolcadores/', nuevoCamion).subscribe(() => {
-      this.getVehiculos();
-    });
-
-  }
-
-  getCamionVolcadorById(id: string) {
-    this._httpClient.get<CamionVolcador>(`http://localhost:3000/camionesVolcadores/${id}`)
-    .subscribe( (data) => {this.unCamionVolcador = data; } );
-  }
-
+  
   //Taller
 
 

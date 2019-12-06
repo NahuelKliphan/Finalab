@@ -15,7 +15,7 @@ export class FormVehiculoComponent implements OnInit {
   ngOnInit() {
   }
 
-  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '','');
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '','',null,null,null);
 
   editar: boolean = false;
 
@@ -26,7 +26,8 @@ export class FormVehiculoComponent implements OnInit {
 
       if (this.editar == false) {
 
-        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto,this.unVehiculo.tipo, this.unVehiculo.observaciones));
+        this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto,this.unVehiculo.tipo, this.unVehiculo.observaciones, 
+          this.unVehiculo.acoplado,this.unVehiculo.cantidadRuedas,this.unVehiculo.capacidadCarga));
       }
       else 
       {
@@ -40,7 +41,10 @@ export class FormVehiculoComponent implements OnInit {
           "foto":this.unVehiculo.foto,
           "observaciones":this.unVehiculo.observaciones,
           "id":this.unVehiculo.id,
-          "tipo": this.unVehiculo.tipo
+          "tipo": this.unVehiculo.tipo,
+          "acoplado":this.unVehiculo.acoplado,
+          "cantidadRuedas":this.unVehiculo.cantidadRuedas,
+          "capacidadCarga": this.unVehiculo.capacidadCarga
         });
       }
 
@@ -73,7 +77,7 @@ export class FormVehiculoComponent implements OnInit {
   }
 
   vaciar(){
-    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '','');
+    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '','',null,null,null);
   }
 
 

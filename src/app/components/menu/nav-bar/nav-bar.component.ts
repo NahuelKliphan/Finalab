@@ -12,4 +12,10 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  busqueda: string;
+
+  Buscar(){
+    window.location.href = '/'+ this.busqueda;
+  }
+
 }

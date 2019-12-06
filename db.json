@@ -2,46 +2,27 @@
   "vehiculos": [
     {
       "nroVehiculo": 1,
-      "marca": "Ford",
-      "modelo": "Cargo",
+      "marca": "1",
+      "modelo": "1",
       "fechaCompra": "2019-12-05",
-      "estado": "Nuevo",
-      "patente": "123124sd",
+      "estado": "Muy Bueno",
+      "patente": "1",
       "foto": "",
+      "observaciones": "",
+      "id": 1,
       "tipo": "Camion general",
-      "observaciones": "Muy bueno",
-      "id": 1
-    },
-    {
-      "nroVehiculo": 123,
-      "marca": "123",
-      "modelo": "123",
-      "fechaCompra": "2019-12-05",
-      "estado": "Nuevo",
-      "patente": "123",
-      "foto": "",
-      "tipo": "Auto",
-      "observaciones": "Solo un auto",
-      "id": 2
+      "acoplado": "No",
+      "cantidadRuedas": 2,
+      "capacidadCarga": 2
     }
   ],
-  "camionesGenerales": [
+  "talleres": [
     {
-      "nroVehiculo": 1,
-      "marca": "Ford",
-      "modelo": "Cargo",
-      "fechaCompra": "2019-12-05",
-      "estado": "Nuevo",
-      "patente": "123124sd",
-      "foto": "",
-      "tipo": "Camion general",
-      "observaciones": "Muy bueno",
-      "capacidadCarga": 500,
-      "cantidadRuedas": 8,
-      "acoplado": "Si",
+      "nombre": "Cachito",
+      "direccion": "Paraná",
+      "telefono": "45215478",
+      "encargado": "Oscar",
       "id": 1
     }
-  ],
-  "camionesVolcadores": [],
-  "talleres": []
+  ]
 }

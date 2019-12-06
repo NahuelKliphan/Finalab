@@ -68,7 +68,7 @@
 </div>
 
 <div [hidden]="unVehiculo.tipo !== 'Camion general'">
-    <app-form-camion-general  #formCamionGeneral [unVehiculo] = "unVehiculo"></app-form-camion-general>
+    <app-form-camion-general  #formCamionGeneral [unVehiculo] = "unVehiculo" ></app-form-camion-general>
 </div>
 
 <div [hidden]="unVehiculo.tipo !== 'Camion volcador'">
@@ -81,5 +81,5 @@
 </div>
 
 <div class="text-center">
-    <button type="button" class="btn btn-primary" (click)="addVehiculo(); formCamionGeneral.addCamionGeneral(); formCamionVolcador.addCamionVolcador();">Guardar</button>
+    <button type="button" class="btn btn-primary" (click)="addVehiculo()">Guardar</button>
 </div>

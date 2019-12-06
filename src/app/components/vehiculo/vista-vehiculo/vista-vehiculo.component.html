@@ -55,32 +55,20 @@
 
                 <div class="row">
 
-                    <div class="form-group col-4" *ngIf="database.unCamionGeneral">
+                    <div class="form-group col-4" *ngIf="database.unVehiculo.tipo == 'Camion general' || database.unVehiculo.tipo == 'Camion volcador' ">
                         <label for="capacidadCarga">Capacidad de carga</label>
                         <input type="text" class="form-control" name="capacidadCarga"
-                            [(ngModel)]="database.unCamionGeneral.capacidadCarga" readonly>
+                            [(ngModel)]="database.unVehiculo.capacidadCarga" readonly>
                     </div>
-                    <div class="form-group col-4" *ngIf="database.unCamionVolcador">
-                        <label for="capacidadCarga">Capacidad de carga</label>
-                        <input type="text" class="form-control" name="capacidadCarga"
-                            [(ngModel)]="database.unCamionVolcador.capacidadCarga" readonly>
-                    </div>
-
-                    <div class="form-group col-4" *ngIf="database.unCamionGeneral">
+                    <div class="form-group col-4" *ngIf="database.unVehiculo.tipo == 'Camion general' || database.unVehiculo.tipo == 'Camion volcador' ">
                         <label for="cantidadRuedas">Cantidad de ruedas</label>
                         <input type="text" class="form-control" name="cantidadRuedas"
-                            [(ngModel)]="database.unCamionGeneral.cantidadRuedas" readonly>
+                            [(ngModel)]="database.unVehiculo.cantidadRuedas" readonly>
                     </div>
-                    <div class="form-group col-4" *ngIf="database.unCamionVolcador">
-                        <label for="cantidadRuedas">Cantidad de ruedas</label>
-                        <input type="text" class="form-control" name="cantidadRuedas"
-                            [(ngModel)]="database.unCamionVolcador.cantidadRuedas" readonly>
-                    </div>
-
-                    <div class="form-group col-4 " *ngIf="database.unCamionGeneral">
+                    <div class="form-group col-4 " *ngIf="database.unVehiculo.tipo == 'Camion general'">
                         <label for="acoplado">Acoplado</label>
                         <input type="text" class="form-control" name="acoplado"
-                        [(ngModel)]="database.unCamionGeneral.acoplado" readonly>
+                        [(ngModel)]="database.unVehiculo.acoplado" readonly>
                     </div>
 
                 </div>

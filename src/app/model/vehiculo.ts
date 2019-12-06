@@ -10,8 +10,12 @@ export class Vehiculo{
     foto:string;
     tipo:string;
     observaciones:string;
+    acoplado: boolean;
+    cantidadRuedas: number;
+    capacidadCarga: number;
 
-    constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,tipo:string,observaciones:string) {
+    constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,tipo:string,observaciones:string,
+        acoplado: boolean,cantidadRuedas: number,capacidadCarga: number) {
 
         this.nroVehiculo=nroVehiculo;
         this.marca=marca;
@@ -22,6 +26,9 @@ export class Vehiculo{
         this.foto=foto;
         this.tipo=tipo;
         this.observaciones=observaciones;
+        this.acoplado=acoplado;
+        this.cantidadRuedas=cantidadRuedas;
+        this.capacidadCarga=capacidadCarga;
     }
 
 }
