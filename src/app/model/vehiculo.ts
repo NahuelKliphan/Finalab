@@ -10,12 +10,12 @@ export class Vehiculo{
     foto:string;
     tipo:string;
     observaciones:string;
-    acoplado: boolean;
+    acoplado: string;
     cantidadRuedas: number;
     capacidadCarga: number;
 
     constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,tipo:string,observaciones:string,
-        acoplado: boolean,cantidadRuedas: number,capacidadCarga: number) {
+        acoplado: string,cantidadRuedas: number,capacidadCarga: number) {
 
         this.nroVehiculo=nroVehiculo;
         this.marca=marca;

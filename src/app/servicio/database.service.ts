@@ -20,25 +20,25 @@ export class DatabaseService {
   //Vehiculos
 
   getVehiculos() {
-    this._httpClient.get<Vehiculo[]>('http://localhost:3000/vehiculos/')
+    this._httpClient.get<Vehiculo[]>('http://localhost:4000/api/vehiculos/')
       .subscribe(
         (data) => this.listadoVehiculos = data
       );
   }
 
   getVehiculoById(id: string) {
-    return this._httpClient.get<Vehiculo>(`http://localhost:3000/vehiculos/${id}`);
+    return this._httpClient.get<Vehiculo>(`http://localhost:4000/api/vehiculos/${id}`);
   }
 
   agregarVehiculo(nuevoVehiculo: Vehiculo) {
-    this._httpClient.post('http://localhost:3000/vehiculos/', nuevoVehiculo).subscribe(() => {
+    this._httpClient.post('http://localhost:4000/api/vehiculos/', nuevoVehiculo).subscribe(() => {
       this.getVehiculos();
     });
   }
 
 
   borrarVehiculo(id: number) {
-    this._httpClient.delete(`http://localhost:3000/vehiculos/${id}`).subscribe(
+    this._httpClient.delete(`http://localhost:4000/api/vehiculos/${id}`).subscribe(
       () => {
         this.getVehiculos()
       }
@@ -47,7 +47,7 @@ export class DatabaseService {
   }
 
   actualizarVehiculo(vehiculo: Vehiculo) {
-    this._httpClient.put(`http://localhost:3000/vehiculos/${vehiculo.id}`, vehiculo)
+    this._httpClient.put(`http://localhost:4000/api/vehiculos/${vehiculo.id}`, vehiculo)
       .subscribe(
         () => this.getVehiculos()
       );
@@ -56,23 +56,22 @@ export class DatabaseService {
   
   //Taller
 
-
   getTalleres() {
-    this._httpClient.get<Taller[]>('http://localhost:3000/talleres/')
+    this._httpClient.get<Taller[]>('http://localhost:4000/api/talleres/')
       .subscribe(
         (data) => this.listadoTalleres = data
       );
   }
 
   agregarTaller(nuevoTaller: Taller) {
-    this._httpClient.post('http://localhost:3000/talleres/', nuevoTaller).subscribe(() => {
+    this._httpClient.post('http://localhost:4000/api/talleres/', nuevoTaller).subscribe(() => {
       this.getTalleres()
     });
   }
 
 
   borrarTaller(id: number) {
-    this._httpClient.delete(`http://localhost:3000/talleres/${id}`).subscribe(
+    this._httpClient.delete(`http://localhost:4000/api/talleres/${id}`).subscribe(
       () => {
         this.getTalleres()
       }
@@ -81,7 +80,7 @@ export class DatabaseService {
   }
 
   actualizarTaller(taller: Taller) {
-    this._httpClient.put(`http://localhost:3000/talleres/${taller.id}`, taller)
+    this._httpClient.put(`http://localhost:4000/api/talleres/${taller.id}`, taller)
       .subscribe(
         () => this.getTalleres()
       );

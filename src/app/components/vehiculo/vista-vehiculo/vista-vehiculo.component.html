@@ -1,4 +1,3 @@
-
 <div class="row">
 
     <div class="card border-secondary col-12" style="padding: 2%;">
@@ -55,20 +54,22 @@
 
                 <div class="row">
 
-                    <div class="form-group col-4" *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
+                    <div class="form-group col-4"
+                        *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
                         <label for="capacidadCarga">Capacidad de carga</label>
                         <input type="text" class="form-control" name="capacidadCarga"
                             [(ngModel)]="unVehiculo.capacidadCarga" readonly>
                     </div>
-                    <div class="form-group col-4" *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
+                    <div class="form-group col-4"
+                        *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
                         <label for="cantidadRuedas">Cantidad de ruedas</label>
                         <input type="text" class="form-control" name="cantidadRuedas"
                             [(ngModel)]="unVehiculo.cantidadRuedas" readonly>
                     </div>
                     <div class="form-group col-4 " *ngIf="unVehiculo.tipo == 'Camion general'">
                         <label for="acoplado">Acoplado</label>
-                        <input type="text" class="form-control" name="acoplado"
-                        [(ngModel)]="unVehiculo.acoplado" readonly>
+                        <input type="text" class="form-control" name="acoplado" [(ngModel)]="unVehiculo.acoplado"
+                            readonly>
                     </div>
 
                 </div>
@@ -115,24 +116,8 @@
 
 </div>
 
-
-
-
-
-
- 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
+<div class="row">
+    <div class="card border-secondary col-12" style="padding: 2%;">
+        <app-lista-revision></app-lista-revision>
+    </div>
+</div>
