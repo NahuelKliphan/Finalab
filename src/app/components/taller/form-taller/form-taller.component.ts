@@ -38,15 +38,22 @@ export class FormTallerComponent implements OnInit {
 
   editTaller() {
 
-    this.database.actualizarTaller({
-      "nombre": this.unTaller.nombre,
-      "direccion": this.unTaller.direccion,
-      "telefono": this.unTaller.telefono,
-      "encargado": this.unTaller.encargado,
-      "id": this.unTaller.id
-    });
+    if(this.formCompleto()){
 
-    this.vaciar();
+      this.database.actualizarTaller({
+        "nombre": this.unTaller.nombre,
+        "direccion": this.unTaller.direccion,
+        "telefono": this.unTaller.telefono,
+        "encargado": this.unTaller.encargado,
+        "id": this.unTaller.id
+      });
+  
+      this.vaciar();
+    }
+    else{
+      alert('Faltan datos')
+    }
+
     this.editar = false;
   }
 

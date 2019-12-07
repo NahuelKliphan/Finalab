@@ -25,9 +25,6 @@ export class FormRevisionComponent implements OnInit {
 
   editar: boolean = false;
 
-  fecha: Date;
-
-
   addRevision() {
 
     //Comprueba que todos los campos estén llenos
@@ -60,15 +57,45 @@ export class FormRevisionComponent implements OnInit {
       this.vaciar();
     }
     else {
-      alert('Faltan datos')
+      alert('Faltan datos');
     }
 
     this.editar = false;
   }
 
+  editRevision() {
+
+    if(this.formCompleto()){
+
+    this.database.actualizarRevision({
+
+      "id":this.unaRevision.id,
+      "fechaEntrada":this.unaRevision.fechaEntrada,
+      "fechaSalida":this.unaRevision.fechaSalida,
+      "cantidad":this.unaRevision.cantidad,
+      "periodo":this.unaRevision.periodo,
+      "km":this.unaRevision.km,
+      "idTaller":this.unaRevision.idTaller,
+      "idVehiculo":this.unaRevision.idVehiculo,
+      "tareasRealizar":this.unaRevision.tareasRealizar,
+      "tareasRealizadas":this.unaRevision.tareasRealizadas,
+      "programado":this.unaRevision.programado
+    });
+
+    this.vaciar();
+  }
+  else
+  {
+    alert('Faltan datos');
+  }
+
+  this.editar = false;
+  
+  }
+
   formCompleto() {
 
-    if (this.unaRevision.km != null && this.unaRevision.idTaller != null) {
+    if (this.unaRevision.fechaEntrada != null && this.unaRevision.fechaSalida!=null && this.unaRevision.km != null && this.unaRevision.idTaller != null) {
       return true;
     }
     else {
@@ -86,8 +113,9 @@ export class FormRevisionComponent implements OnInit {
     this.unaRevision = unaRevision;
   }
 
-  editRevision() {
-   
+  borrarRevision(){
+    this.editar = false;
+    this.vaciar();
   }
 
 }

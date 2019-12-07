@@ -37,23 +37,31 @@ export class FormVehiculoComponent implements OnInit {
 
   editVehiculo() {
 
-    this.database.actualizarVehiculo({
-      "nroVehiculo": this.unVehiculo.nroVehiculo,
-      "marca": this.unVehiculo.marca,
-      "modelo": this.unVehiculo.modelo,
-      "fechaCompra": this.unVehiculo.fechaCompra,
-      "estado": this.unVehiculo.estado,
-      "patente": this.unVehiculo.patente,
-      "foto": this.unVehiculo.foto,
-      "observaciones": this.unVehiculo.observaciones,
-      "id": this.unVehiculo.id,
-      "tipo": this.unVehiculo.tipo,
-      "acoplado": this.unVehiculo.acoplado,
-      "cantidadRuedas": this.unVehiculo.cantidadRuedas,
-      "capacidadCarga": this.unVehiculo.capacidadCarga
-    });
+    if(this.formCompleto()){
 
-    this.vaciar();
+      this.database.actualizarVehiculo({
+        "nroVehiculo": this.unVehiculo.nroVehiculo,
+        "marca": this.unVehiculo.marca,
+        "modelo": this.unVehiculo.modelo,
+        "fechaCompra": this.unVehiculo.fechaCompra,
+        "estado": this.unVehiculo.estado,
+        "patente": this.unVehiculo.patente,
+        "foto": this.unVehiculo.foto,
+        "observaciones": this.unVehiculo.observaciones,
+        "id": this.unVehiculo.id,
+        "tipo": this.unVehiculo.tipo,
+        "acoplado": this.unVehiculo.acoplado,
+        "cantidadRuedas": this.unVehiculo.cantidadRuedas,
+        "capacidadCarga": this.unVehiculo.capacidadCarga
+      });
+  
+      this.vaciar();
+      
+    }
+    else {
+      alert('Faltan datos')
+    }
+
     this.editar =false;
 
   }
