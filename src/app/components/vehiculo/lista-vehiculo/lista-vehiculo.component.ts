@@ -18,10 +18,12 @@ export class ListaVehiculoComponent implements OnInit {
   busqueda: string = "";
 
   @Output() VehiculoAmodificar = new EventEmitter();
+  @Output() Borrar = new EventEmitter();
 
   eliminarVehiculo(id: number) {
     this.database.borrarVehiculo(id);
     this.database.getVehiculos();
+    this.Borrar.emit();
   }
 
   solicitarModificacion(unVehiculo: Vehiculo) {

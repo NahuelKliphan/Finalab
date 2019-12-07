@@ -18,10 +18,12 @@ export class ListaTallerComponent implements OnInit {
   busqueda: string = "";
 
   @Output() TallerAmodificar = new EventEmitter();
+  @Output() Borrar = new EventEmitter();
 
   eliminarTaller(id:number){
     this.database.borrarTaller(id);
     this.database.getTalleres();
+    this.Borrar.emit();
   }
 
   solicitarModificacion(unTaller:Taller){

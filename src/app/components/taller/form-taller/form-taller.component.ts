@@ -14,34 +14,17 @@ export class FormTallerComponent implements OnInit {
   ngOnInit() {
   }
 
-  unTaller: Taller = new Taller('','','','');
+  unTaller: Taller = new Taller('', '', '', '');
 
   editar: boolean = false;
 
   addTaller() {
 
-    if(this.formCompleto())
-    {
-
-      if (this.editar == false) {
-
-        this.database.agregarTaller(new Taller(this.unTaller.nombre,this.unTaller.direccion,this.unTaller.telefono,this.unTaller.encargado));
-      }
-      else 
-      {
-        this.database.actualizarTaller({
-          "nombre": this.unTaller.nombre,
-          "direccion": this.unTaller.direccion,
-          "telefono": this.unTaller.telefono,
-          "encargado": this.unTaller.encargado,
-          "id": this.unTaller.id
-        });
-      }
-
+    if (this.formCompleto()) {
+      this.database.agregarTaller(new Taller(this.unTaller.nombre, this.unTaller.direccion, this.unTaller.telefono, this.unTaller.encargado));
       this.vaciar();
     }
-    else
-    {
+    else {
       alert('Faltan datos')
     }
 
@@ -53,20 +36,37 @@ export class FormTallerComponent implements OnInit {
     this.unTaller = unTaller;
   }
 
-  formCompleto(){
+  editTaller() {
 
-    if(this.unTaller.nombre != '' && this.unTaller.direccion != '' && this.unTaller.telefono != '' && this.unTaller.encargado != '')
-    {
+    this.database.actualizarTaller({
+      "nombre": this.unTaller.nombre,
+      "direccion": this.unTaller.direccion,
+      "telefono": this.unTaller.telefono,
+      "encargado": this.unTaller.encargado,
+      "id": this.unTaller.id
+    });
+
+    this.vaciar();
+    this.editar = false;
+  }
+
+  borrarTaller(){
+    this.editar = false;
+    this.vaciar();
+  }
+
+  formCompleto() {
+
+    if (this.unTaller.nombre != '' && this.unTaller.direccion != '' && this.unTaller.telefono != '' && this.unTaller.encargado != '') {
       return true;
     }
-    else
-    {
+    else {
       return false;
     }
 
   }
 
-  vaciar(){
+  vaciar() {
     this.unTaller = new Taller('', '', '', '');
   }
 

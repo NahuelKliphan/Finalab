@@ -21,6 +21,10 @@
         [(ngModel)]="unTaller.encargado">
 </div>
 
-<div class="text-center">
+<div class="text-center" [hidden] = "editar">
     <button type="button" class="btn btn-primary" (click)="addTaller()">Guardar</button>
+</div>
+
+<div class="text-center" [hidden] = "!editar">
+    <button type="button" class="btn btn-outline-primary" (click)="editTaller()">Editar</button>
 </div>

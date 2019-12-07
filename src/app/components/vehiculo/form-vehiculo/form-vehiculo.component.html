@@ -80,6 +80,10 @@
     <textarea class="form-control" name="observaciones" rows="3" [(ngModel)]="unVehiculo.observaciones"></textarea>
 </div>
 
-<div class="text-center">
+<div class="text-center" [hidden] = "editar">
     <button type="button" class="btn btn-primary" (click)="addVehiculo()">Guardar</button>
+</div>
+
+<div class="text-center" [hidden] = "!editar">
+    <button type="button" class="btn btn-outline-primary" (click)="editVehiculo()">Editar</button>
 </div>

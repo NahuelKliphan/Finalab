@@ -18,10 +18,12 @@ export class ListaRevisionComponent implements OnInit {
   busqueda: string = "";
 
   @Output() RevisionAmodificar = new EventEmitter();
+  @Output() Borrar = new EventEmitter();
 
   eliminarRevision(id: number) {
     this.database.borrarRevision(id);
     this.database.getRevisiones();
+    this.Borrar.emit();
   }
 
   solicitarModificacion(unaRevision: Revision) {

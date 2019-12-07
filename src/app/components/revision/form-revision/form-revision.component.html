@@ -59,20 +59,22 @@
 
 <div class="row" [hidden]="!unaRevision.programado">
 
-        <div class="form-group col-6">
+        <div class="form-group col-6" [hidden]="editar">
                 <label for="cantidad">Cantidad</label>
                 <input type="number" class="form-control" name="cantidad" [(ngModel)]="unaRevision.cantidad" placeholder="Cantidad">
         </div>
-        <div class="form-group col-6">
+        <div class="form-group col-6" [hidden]="editar">
                 <label for="periodo">Período</label>
                 <input type="number" class="form-control" name="periodo" [(ngModel)]="unaRevision.periodo" placeholder="Período">
         </div>
 
 </div>
 
-<div class="text-center">
+<div class="text-center" [hidden] = "editar">
     <button type="button" class="btn btn-primary" (click)="addRevision()">Guardar</button>
 </div>
 
 
-debug: {{unaRevision | json}}
+<div class="text-center" [hidden] = "!editar">
+    <button type="button" class="btn btn-outline-primary" (click)="editRevision()">Editar</button>
+</div>

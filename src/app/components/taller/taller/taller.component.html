@@ -1,7 +1,7 @@
 <div class="row">
 
     <app-form-taller #formTaller class="card col-4" style="padding: 2%;"></app-form-taller> 
-    <app-lista-taller (TallerAmodificar)="formTaller.editarTaller($event)" class="card col-8" style="padding: 2%;"></app-lista-taller>
+    <app-lista-taller (Borrar)="formTaller.borrarTaller()" (TallerAmodificar)="formTaller.editarTaller($event)" class="card col-8" style="padding: 2%;"></app-lista-taller>
 
 </div>
 
