@@ -1,0 +1,19 @@
+<h5>Revisiones del vehiculo:</h5>
+<div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Buscar">
+</div>
+<ul class="list-group">
+    <button class="list-group-item list-group-item-action"
+        *ngFor="let unaRevision of database.listadoRevisiones | buscar:busqueda">
+        <b>Fecha Entrada:</b> {{ unaRevision.fechaEntrada}} <br>
+        <b>Fecha Salida:</b> {{ unaRevision.fechaSalida }} <br>
+        <b>Cantidad:</b> {{ unaRevision.cantidad }} <br>
+        <button class="btn btn-danger darespacio float-right" (click)="eliminarRevision(unaRevision.id)">Borrar</button>
+        <button class="darespacio btn btn-dark float-right" (click)="solicitarModificacion(unaRevision)">Editar</button>
+        <b>Periodo:</b> {{ unaRevision.periodo }} <br>
+        <b>Km:</b> {{ unaRevision.km }} <br>
+        <b>Taller:</b> {{ unaRevision.idTaller }} <br>
+        <b>Tareas Realizar:</b> {{ unaRevision.tareasRealizar }} <br>
+        <b>Tareas Realizadas:</b> {{ unaRevision.tareasRealizadas }}
+    </button>
+</ul>

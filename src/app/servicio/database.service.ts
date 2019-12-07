@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Vehiculo } from '../model/Vehiculo';
 import { Taller } from '../model/Taller';
+import { Revision } from '../model/Revision';
 
 
 @Injectable({
@@ -14,6 +15,7 @@ export class DatabaseService {
 
   listadoVehiculos: Vehiculo[] = [];
   listadoTalleres: Taller[] = [];
+  listadoRevisiones: Revision[] =[]
 
   //Vehiculos
 
@@ -39,7 +41,6 @@ export class DatabaseService {
     this._httpClient.delete(`http://localhost:3000/vehiculos/${id}`).subscribe(
       () => {
         this.getVehiculos()
-
       }
 
     );
@@ -83,6 +84,42 @@ export class DatabaseService {
     this._httpClient.put(`http://localhost:3000/talleres/${taller.id}`, taller)
       .subscribe(
         () => this.getTalleres()
+      );
+  }
+
+  //Revision
+
+  getRevisiones() {
+    this._httpClient.get<Revision[]>('http://localhost:3000/revisiones/')
+      .subscribe(
+        (data) => this.listadoRevisiones = data
+      );
+  }
+
+  agregarRevision(revisiones: Revision[]) {
+
+    revisiones.forEach(unaRevision => {
+
+      this._httpClient.post('http://localhost:3000/revisiones/', unaRevision).subscribe((data) => {
+        console.log('Se mandó ' + data); this.getRevisiones();
+      });
+
+    });
+  }
+
+  borrarRevision(id: number) {
+    this._httpClient.delete(`http://localhost:3000/revisiones/${id}`).subscribe(
+      () => {
+        this.getRevisiones()
+      }
+
+    );
+  }
+
+  actualizarRevision(revision: Revision) {
+    this._httpClient.put(`http://localhost:3000/revisiones/${revision.id}`, revision)
+      .subscribe(
+        () => this.getRevisiones()
       );
   }
 

@@ -19,9 +19,6 @@ export class FormVehiculoComponent implements OnInit {
 
   editar: boolean = false;
 
-  public respuestaImagenEnviada;
-  public resultadoCarga;
-
   addVehiculo() {
 
     if (this.formCompleto()) {

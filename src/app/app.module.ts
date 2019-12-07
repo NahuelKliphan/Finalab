@@ -18,6 +18,9 @@ import { ListaTallerComponent } from './components/taller/lista-taller/lista-tal
 import { FormCamionVolcadorComponent } from './components/vehiculo/form-camion-volcador/form-camion-volcador.component';
 import { VistaVehiculoComponent } from './components/vehiculo/vista-vehiculo/vista-vehiculo.component';
 import {DatabaseService} from 'src/app/servicio/database.service';
+import { RevisionComponent } from './components/revision/revision/revision.component';
+import { FormRevisionComponent } from './components/revision/form-revision/form-revision.component';
+import { ListaRevisionComponent } from './components/revision/lista-revision/lista-revision.component';
 
 const routes : Routes = [
   {
@@ -35,6 +38,10 @@ const routes : Routes = [
   {
     path:'verVehiculo',
     component :VistaVehiculoComponent
+  },
+  {
+    path:'revision',
+    component :RevisionComponent
   }
 ];
 
@@ -52,7 +59,10 @@ const routes : Routes = [
     FormTallerComponent,
     ListaTallerComponent,
     FormCamionVolcadorComponent,
-    VistaVehiculoComponent
+    VistaVehiculoComponent,
+    RevisionComponent,
+    FormRevisionComponent,
+    ListaRevisionComponent,
   ],
   imports: [
     BrowserModule,

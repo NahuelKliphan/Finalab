@@ -1,0 +1,78 @@
+<div class="row">
+
+    <div class="form-group col-6">
+        <label for="fechaEntrada">Fecha Entrada</label>
+        <input type="date" class="form-control" name="fechaEntrada" [(ngModel)]="unaRevision.fechaEntrada">
+    </div>
+
+    <div class="form-group col-6">
+        <label for="fechaSalida">Fecha Salida</label>
+        <input type="date" class="form-control" name="fechaSalida" [(ngModel)]="unaRevision.fechaSalida" [min]="unaRevision.fechaEntrada">
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="form-group col-6">
+        <label for="km">Kilómetros</label>
+        <input type="number" class="form-control" name="km" [(ngModel)]="unaRevision.km" placeholder="Km del vehiculo">
+    </div>
+
+    <div class="form-group col-6">
+        <label for="idTaller">Taller</label>
+        <select class="form-control" name="idTaller" [(ngModel)]="unaRevision.idTaller">
+            <option [ngValue]="null" disabled>Elija un taller</option>
+            <option *ngFor="let unTaller of database.listadoTalleres" [ngValue]="unTaller.id">
+                {{unTaller.nombre}}
+            </option>
+        </select>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="form-group col-12">
+        <label for="tareasRealizar">Tareas a realizar</label>
+        <textarea class="form-control" name="tareasRealizar" rows="3"
+            [(ngModel)]="unaRevision.tareasRealizar"></textarea>
+    </div>
+
+    <div class="form-group col-12">
+        <label for="tareasRealizadas">Tareas a Realizadas</label>
+        <textarea class="form-control" name="tareasRealizadas" rows="3"
+            [(ngModel)]="unaRevision.tareasRealizadas"></textarea>
+    </div>
+
+</div>
+
+<div class="row darespacio" [hidden] = "editar">
+
+    <div class="form-check col-12">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" [(ngModel)] ="unaRevision.programado" >Programado
+        </label>
+    </div>
+
+</div>
+
+<div class="row" [hidden]="!unaRevision.programado">
+
+        <div class="form-group col-6">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" class="form-control" name="cantidad" [(ngModel)]="unaRevision.cantidad" placeholder="Cantidad">
+        </div>
+        <div class="form-group col-6">
+                <label for="periodo">Período</label>
+                <input type="number" class="form-control" name="periodo" [(ngModel)]="unaRevision.periodo" placeholder="Período">
+        </div>
+
+</div>
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="addRevision()">Guardar</button>
+</div>
+
+
+debug: {{unaRevision | json}}

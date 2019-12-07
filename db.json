@@ -14,6 +14,21 @@
       "cantidadRuedas": null,
       "capacidadCarga": null,
       "id": 1
+    },
+    {
+      "nroVehiculo": 3,
+      "marca": "3",
+      "modelo": "3",
+      "fechaCompra": "2019-12-06",
+      "estado": "Nuevo",
+      "patente": "3",
+      "foto": "hola.png",
+      "tipo": "Auto",
+      "observaciones": "12",
+      "acoplado": null,
+      "cantidadRuedas": null,
+      "capacidadCarga": null,
+      "id": 2
     }
   ],
   "talleres": [
@@ -23,6 +38,54 @@
       "telefono": "45215478",
       "encargado": "Oscar",
       "id": 1
+    },
+    {
+      "nombre": "otro",
+      "direccion": "otro",
+      "telefono": "otro",
+      "encargado": "otro",
+      "id": 2
+    }
+  ],
+  "revisiones": [
+    {
+      "fechaEntrada": "2019-06-04T00:00:00.000Z",
+      "fechaSalida": "2019-12-06T00:00:00.000Z",
+      "cantidad": 3,
+      "periodo": 40,
+      "km": 2,
+      "idTaller": 1,
+      "idVehiculo": 2,
+      "tareasRealizar": "",
+      "tareasRealizadas": "",
+      "programado": true,
+      "id": 1
+    },
+    {
+      "fechaEntrada": "2019-07-14T00:00:00.000Z",
+      "fechaSalida": "2019-12-06T00:00:00.000Z",
+      "cantidad": 3,
+      "periodo": 40,
+      "km": 2,
+      "idTaller": 1,
+      "idVehiculo": 2,
+      "tareasRealizar": "",
+      "tareasRealizadas": "",
+      "programado": true,
+      "id": 2
+    },
+    {
+      "fechaEntrada": "2019-07-24T00:00:00.000Z",
+      "fechaSalida": "2019-12-06T00:00:00.000Z",
+      "cantidad": 3,
+      "periodo": 40,
+      "km": 2,
+      "idTaller": 1,
+      "idVehiculo": 2,
+      "tareasRealizar": "",
+      "tareasRealizadas": "",
+      "programado": true,
+      "id": 3
     }
   ]
 }
