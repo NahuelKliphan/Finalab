@@ -92,8 +92,9 @@ export class FormRevisionComponent implements OnInit {
     this.unaRevision = new Revision(null,null,null,null,null,null,null,'','',null);
   }
 
-  editarRevision(algo){
+  editarRevision(unaRevision){
     this.editar = true;
+    this.unaRevision = unaRevision;
   }
 
 }

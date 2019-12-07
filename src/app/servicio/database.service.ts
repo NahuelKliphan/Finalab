@@ -89,9 +89,9 @@ export class DatabaseService {
   //Revision
 
   getRevisiones() {
-    this._httpClient.get<Revision[]>('http://localhost:3000/revisiones/')
+    this._httpClient.get<Revision[]>(`http://localhost:4000/api/revisiones/`+ localStorage.getItem('id'))
       .subscribe(
-        (data) => this.listadoRevisiones = data
+        (data) => {this.listadoRevisiones = data;}
       );
   }
 
@@ -99,27 +99,27 @@ export class DatabaseService {
 
     revisiones.forEach(unaRevision => {
 
-      this._httpClient.post('http://localhost:3000/revisiones/', unaRevision).subscribe((data) => {
-        console.log('Se mandó ' + data); this.getRevisiones();
+      this._httpClient.post('http://localhost:4000/api/revisiones/', unaRevision).subscribe((data) => {
+         this.getRevisiones();
       });
 
     });
   }
 
   borrarRevision(id: number) {
-    this._httpClient.delete(`http://localhost:3000/revisiones/${id}`).subscribe(
+    this._httpClient.delete(`http://localhost:4000/api/revisiones/${id}`).subscribe(
       () => {
-        this.getRevisiones()
+        this.getRevisiones();
       }
 
     );
   }
 
   actualizarRevision(revision: Revision) {
-    this._httpClient.put(`http://localhost:3000/revisiones/${revision.id}`, revision)
+    this._httpClient.put(`http://localhost:4000/api/revisiones/${revision.id}`, revision)
       .subscribe(
-        () => this.getRevisiones()
-      );
+        () => this.getRevisiones());
+      ;
   }
 
 }
