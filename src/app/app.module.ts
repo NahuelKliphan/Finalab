@@ -11,6 +11,7 @@ import { ListaVehiculoComponent } from './components/vehiculo/lista-vehiculo/lis
 import { FormVehiculoComponent } from './components/vehiculo/form-vehiculo/form-vehiculo.component';
 import { FormsModule } from '@angular/forms';
 import { Buscar } from './pipes/buscar';
+import { ArraySortPipe } from './pipes/ordenar';
 import { FormCamionGeneralComponent } from './components/vehiculo/form-camion-general/form-camion-general.component';
 import { TallerComponent } from './components/taller/taller/taller.component';
 import { FormTallerComponent } from './components/taller/form-taller/form-taller.component';
@@ -21,6 +22,10 @@ import {DatabaseService} from 'src/app/servicio/database.service';
 import { RevisionComponent } from './components/revision/revision/revision.component';
 import { FormRevisionComponent } from './components/revision/form-revision/form-revision.component';
 import { ListaRevisionComponent } from './components/revision/lista-revision/lista-revision.component';
+
+
+
+
 
 const routes : Routes = [
   {
@@ -54,6 +59,7 @@ const routes : Routes = [
     ListaVehiculoComponent,
     FormVehiculoComponent,
     Buscar,
+    ArraySortPipe,
     FormCamionGeneralComponent,
     TallerComponent,
     FormTallerComponent,
@@ -69,7 +75,7 @@ const routes : Routes = [
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]

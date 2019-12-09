@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from 'src/app/model/Vehiculo';
-import { DatabaseService } from 'src/app/servicio/database.service'
+import { DatabaseService } from 'src/app/servicio/database.service';
 
 
 @Component({
@@ -76,10 +76,7 @@ export class FormVehiculoComponent implements OnInit {
     this.vaciar();
   }
 
-  public cargandoImagen(files: FileList) {
-    this.unVehiculo.foto = files[0].name;
-  }
-
+  
   formCompleto() {
 
     if (this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' && this.unVehiculo.tipo != '') {

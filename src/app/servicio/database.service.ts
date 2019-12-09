@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Vehiculo } from '../model/Vehiculo';
 import { Taller } from '../model/Taller';
 import { Revision } from '../model/Revision';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -16,6 +17,7 @@ export class DatabaseService {
   listadoVehiculos: Vehiculo[] = [];
   listadoTalleres: Taller[] = [];
   listadoRevisiones: Revision[] =[]
+  nombreTalleres: string[] = [];
 
   //Vehiculos
 
@@ -59,7 +61,13 @@ export class DatabaseService {
   getTalleres() {
     this._httpClient.get<Taller[]>('http://localhost:4000/api/talleres/')
       .subscribe(
-        (data) => this.listadoTalleres = data
+        (data) => {this.listadoTalleres = data;
+          this.listadoTalleres = data;
+          this.listadoTalleres.forEach(x => {
+
+            this.nombreTalleres[x.id] = x.nombre;
+
+          });}
       );
   }
 
