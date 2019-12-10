@@ -1,121 +1,93 @@
-<h5>Detalles del vehiculo:</h5>
-<div class="row">
+<h5 class="col-6">Detalles del vehiculo:</h5>
+ 
+<div class="card border-secondary col-12" style="padding: 2%;">
 
-    <div class="card border-secondary col-12" style="padding: 2%;">
+    <div class="row">
 
-        <div class="row">
+        <div class="form-group col-6">
+            <label for="numero">Numero</label>
+            <input type="text" class="form-control" name="numero" [(ngModel)]="unVehiculo.nroVehiculo"
+                placeholder="Ingrese numero" readonly>
+        </div>
 
-            <div class="col-6">
+        <div class="form-group col-6">
+            <label for="patente">Patente</label>
+            <input type="text" class="form-control" name="patente" placeholder="Ingrese patente"
+                [(ngModel)]="unVehiculo.patente" readonly>
+        </div>
 
-                <div class="row">
 
-                    <div class="form-group col-6">
-                        <label for="numero">Numero</label>
-                        <input type="text" class="form-control" name="numero" [(ngModel)]="unVehiculo.nroVehiculo"
-                            placeholder="Ingrese numero" readonly>
-                    </div>
+        <div class="form-group col-6">
+            <label for="marca">Marca</label>
+            <input type="text" class="form-control" name="marca" placeholder="Ingrese marca"
+                [(ngModel)]="unVehiculo.marca" readonly>
+        </div>
 
-                    <div class="form-group col-6">
-                        <label for="patente">Patente</label>
-                        <input type="text" class="form-control" name="patente" placeholder="Ingrese patente"
-                            [(ngModel)]="unVehiculo.patente" readonly>
-                    </div>
+        <div class="form-group col-6">
+            <label for="modelo">Modelo</label>
+            <input type="text" class="form-control" name="modelo" placeholder="Ingrese modelo"
+                [(ngModel)]="unVehiculo.modelo" readonly>
+        </div>
 
-                </div>
 
-                <div class="row">
+        <div class="form-group col-6">
+            <label for="estado">Estado</label>
+            <input type="text" class="form-control" name="estado" [(ngModel)]="unVehiculo.estado" readonly>
+        </div>
 
-                    <div class="form-group col-6">
-                        <label for="marca">Marca</label>
-                        <input type="text" class="form-control" name="marca" placeholder="Ingrese marca"
-                            [(ngModel)]="unVehiculo.marca" readonly>
-                    </div>
+        <div class="form-group col-6">
+            <label for="tipo">Tipo</label>
+            <input type="text" class="form-control" name="tipo" [(ngModel)]="unVehiculo.tipo" readonly>
+        </div>
 
-                    <div class="form-group col-6">
-                        <label for="modelo">Modelo</label>
-                        <input type="text" class="form-control" name="modelo" placeholder="Ingrese modelo"
-                            [(ngModel)]="unVehiculo.modelo" readonly>
-                    </div>
 
-                </div>
+        <div class="form-group col-4"
+            *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
+            <label for="capacidadCarga">Capacidad de carga</label>
+            <input type="text" class="form-control" name="capacidadCarga" [(ngModel)]="unVehiculo.capacidadCarga"
+                readonly>
+        </div>
+        <div class="form-group col-4"
+            *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
+            <label for="cantidadRuedas">Cantidad de ruedas</label>
+            <input type="text" class="form-control" name="cantidadRuedas" [(ngModel)]="unVehiculo.cantidadRuedas"
+                readonly>
+        </div>
+        <div class="form-group col-4 " *ngIf="unVehiculo.tipo == 'Camion general'">
+            <label for="acoplado">Acoplado</label>
+            <input type="text" class="form-control" name="acoplado" [(ngModel)]="unVehiculo.acoplado" readonly>
+        </div>
 
-                <div class="row">
 
-                    <div class="form-group col-6">
-                        <label for="estado">Estado</label>
-                        <input type="text" class="form-control" name="estado" [(ngModel)]="unVehiculo.estado" readonly>
-                    </div>
+        <div class="col-6">
 
-                    <div class="form-group col-6">
-                        <label for="tipo">Tipo</label>
-                        <input type="text" class="form-control" name="tipo" [(ngModel)]="unVehiculo.tipo" readonly>
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="form-group col-4"
-                        *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
-                        <label for="capacidadCarga">Capacidad de carga</label>
-                        <input type="text" class="form-control" name="capacidadCarga"
-                            [(ngModel)]="unVehiculo.capacidadCarga" readonly>
-                    </div>
-                    <div class="form-group col-4"
-                        *ngIf="unVehiculo.tipo == 'Camion general' || unVehiculo.tipo == 'Camion volcador' ">
-                        <label for="cantidadRuedas">Cantidad de ruedas</label>
-                        <input type="text" class="form-control" name="cantidadRuedas"
-                            [(ngModel)]="unVehiculo.cantidadRuedas" readonly>
-                    </div>
-                    <div class="form-group col-4 " *ngIf="unVehiculo.tipo == 'Camion general'">
-                        <label for="acoplado">Acoplado</label>
-                        <input type="text" class="form-control" name="acoplado" [(ngModel)]="unVehiculo.acoplado"
-                            readonly>
-                    </div>
-
-                </div>
-
+            <div class="form-group">
+                <label for="modelo">Fecha de Compra</label>
+                <input type="date" class="form-control" name="modelo" [(ngModel)]="unVehiculo.fechaCompra" readonly>
             </div>
 
-            <div class="col-6">
+            <div class="form-group">
+                <label for="observaciones">Observaciones</label>
+                <textarea class="form-control" name="observaciones" rows="4" [(ngModel)]="unVehiculo.observaciones"
+                    readonly></textarea>
 
-                <div class="row">
-
-                    <div class="col-6">
-
-                        <div class="form-group">
-                            <label for="modelo">Fecha de Compra</label>
-                            <input type="date" class="form-control" name="modelo" [(ngModel)]="unVehiculo.fechaCompra"
-                                readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="observaciones">Observaciones</label>
-                            <textarea class="form-control" name="observaciones" rows="4"
-                                [(ngModel)]="unVehiculo.observaciones" readonly></textarea>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-6">
-
-                        <div class="form-group">
-                            <label for="foto">Foto</label>
-                            <img src="" alt="">
-                        </div>
-
-                    </div>
-
-                </div>
+                    <button class="btn btn-success darespacio col-5 float-right" (click)="irRevisiones()">Revisiones</button>
+                    <button class="btn btn-outline-secondary darespacio col-5 float-left" (click)="volver()">Volver</button>
 
             </div>
 
         </div>
 
+        <div class="col-6">
+
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <img class="center" src="https://www.diariomotor.com/imagenes/2019/04/ford-explorer-2019-0319-010.jpg" onerror="this.src ='./assets/images/defecto.png'">
+            </div>
+        </div>
+
     </div>
 
-</div>
 
-<button class="btn btn-success darespacio" (click)="irRevisiones()" >Revisiones</button>
+</div>
 

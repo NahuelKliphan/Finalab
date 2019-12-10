@@ -23,10 +23,6 @@ import { RevisionComponent } from './components/revision/revision/revision.compo
 import { FormRevisionComponent } from './components/revision/form-revision/form-revision.component';
 import { ListaRevisionComponent } from './components/revision/lista-revision/lista-revision.component';
 
-
-
-
-
 const routes : Routes = [
   {
     path: 'home',
@@ -47,6 +43,10 @@ const routes : Routes = [
   {
     path:'revision',
     component :RevisionComponent
+  },
+  { path: '',
+  redirectTo: '/home',
+  pathMatch: 'full'
   }
 ];
 
@@ -68,7 +68,7 @@ const routes : Routes = [
     VistaVehiculoComponent,
     RevisionComponent,
     FormRevisionComponent,
-    ListaRevisionComponent,
+    ListaRevisionComponent
   ],
   imports: [
     BrowserModule,

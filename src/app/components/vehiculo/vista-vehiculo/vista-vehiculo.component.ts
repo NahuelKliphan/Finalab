@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/servicio/database.service';
 import { Vehiculo } from 'src/app/model/Vehiculo';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-vista-vehiculo',
@@ -21,6 +20,10 @@ export class VistaVehiculoComponent implements OnInit {
 
   irRevisiones(){
     window.location.href = '/revision';
+  }
+
+  volver(){
+    window.location.href = '/vehiculo';
   }
 
 }
