@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from 'src/app/model/Vehiculo';
 import { DatabaseService } from 'src/app/servicio/database.service';
-import { ImageService } from 'src/app/servicio/image.service';
-
 
 @Component({
   selector: 'app-form-vehiculo',
@@ -11,12 +9,12 @@ import { ImageService } from 'src/app/servicio/image.service';
 })
 export class FormVehiculoComponent implements OnInit {
 
-  constructor(private database: DatabaseService, private imageService: ImageService) { }
+  constructor(private database: DatabaseService) { }
 
   ngOnInit() {
   }
 
-  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', null , '', '', null, null, null);
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', null, '', '', null, null, null);
 
   editar: boolean = false;
 
@@ -25,7 +23,7 @@ export class FormVehiculoComponent implements OnInit {
     if (this.formCompleto()) {
 
       this.database.agregarVehiculo(new Vehiculo(this.unVehiculo.nroVehiculo, this.unVehiculo.marca, this.unVehiculo.modelo, this.unVehiculo.fechaCompra, this.unVehiculo.estado, this.unVehiculo.patente, this.unVehiculo.foto, this.unVehiculo.tipo, this.unVehiculo.observaciones,
-      this.unVehiculo.acoplado, this.unVehiculo.cantidadRuedas, this.unVehiculo.capacidadCarga));
+        this.unVehiculo.acoplado, this.unVehiculo.cantidadRuedas, this.unVehiculo.capacidadCarga));
 
       this.vaciar();
     }
@@ -38,7 +36,7 @@ export class FormVehiculoComponent implements OnInit {
 
   editVehiculo() {
 
-    if(this.formCompleto()){
+    if (this.formCompleto()) {
 
       this.database.actualizarVehiculo({
         "nroVehiculo": this.unVehiculo.nroVehiculo,
@@ -55,15 +53,15 @@ export class FormVehiculoComponent implements OnInit {
         "cantidadRuedas": this.unVehiculo.cantidadRuedas,
         "capacidadCarga": this.unVehiculo.capacidadCarga
       });
-  
+
       this.vaciar();
-      
+
     }
     else {
       alert('Faltan datos')
     }
 
-    this.editar =false;
+    this.editar = false;
 
   }
 
@@ -72,12 +70,12 @@ export class FormVehiculoComponent implements OnInit {
     this.unVehiculo = unVehiculo;
   }
 
-  borrarVehiculo(){
+  borrarVehiculo() {
     this.editar = false;
     this.vaciar();
   }
 
-  
+
   formCompleto() {
 
     if (this.unVehiculo.nroVehiculo != null && this.unVehiculo.patente != '' && this.unVehiculo.marca != '' && this.unVehiculo.modelo != '' && this.unVehiculo.fechaCompra != null && this.unVehiculo.estado != '' && this.unVehiculo.tipo != '') {
@@ -90,20 +88,24 @@ export class FormVehiculoComponent implements OnInit {
   }
 
   vaciar() {
-    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', null , '', '', null, null, null);
+    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', null, '', '', null, null, null);
   }
 
-  
+  fileData: File = null;
+  previewUrl: any = null;
 
-  cargarFoto(files: any){
-    
+  cargarFoto(fileInput: any) {
+
+    this.fileData = <File>fileInput.target.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(this.fileData);
+    reader.onload = (_event) => {
       
-    
+      this.previewUrl = reader.result;
+      this.unVehiculo.foto = this.previewUrl;
+    }
+
   }
-
-
-
-
 
 }
 

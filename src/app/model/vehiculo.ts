@@ -7,14 +7,14 @@ export class Vehiculo{
     fechaCompra:Date;
     estado:string;
     patente:string;
-    foto:string;
+    foto:Array<String>;
     tipo:string;
     observaciones:string;
     acoplado: string;
     cantidadRuedas: number;
     capacidadCarga: number;
 
-    constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:string,tipo:string,observaciones:string,
+    constructor(nroVehiculo:number,marca:string,modelo:string,fechaCompra:Date,estado:string,patente:string,foto:Array<String>,tipo:string,observaciones:string,
         acoplado: string,cantidadRuedas: number,capacidadCarga: number) {
 
         this.nroVehiculo=nroVehiculo;

@@ -15,14 +15,17 @@ export class VistaVehiculoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.database.getVehiculoById(localStorage.getItem('id')).subscribe(data => this.unVehiculo = data);
+    this.database.getVehiculoById(localStorage.getItem('id')).subscribe(data => {
+      this.unVehiculo = data;
+    });
+
   }
 
-  irRevisiones(){
+  irRevisiones() {
     window.location.href = '/revision';
   }
 
-  volver(){
+  volver() {
     window.location.href = '/vehiculo';
   }
 
