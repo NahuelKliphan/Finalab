@@ -37,7 +37,6 @@ export class DatabaseService {
     });
   }
 
-
   borrarVehiculo(id: number) {
     this._httpClient.delete(`http://localhost:4000/api/vehiculos/${id}`).subscribe(
       () => {

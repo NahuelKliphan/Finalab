@@ -9,7 +9,7 @@
     <div class="form-group col-6">
         <label for="patente">Patente</label>
         <input type="text" class="form-control" name="patente" placeholder="Ingrese patente"
-            [(ngModel)]="unVehiculo.patente">
+            [(ngModel)]="unVehiculo.patente" >
     </div>
 
 </div>
@@ -52,9 +52,14 @@
 <div class="row">
 
     <div class="form-group col-6">
-        <label for="foto">Foto
-            <input #foto type="file" accept="image/*" name="foto" (change)="cargarFoto($event)">
-        </label>
+
+        <div class="row">
+
+            <label for="foto" class="col-12">Foto  </label>
+            <input type="file" class="col-12" accept="image/*" name="foto" (change)="cargarFoto($event)">
+                  
+        </div>
+
     </div>
 
     <div class="form-group col-6">
