@@ -11,7 +11,7 @@ export class VistaVehiculoComponent implements OnInit {
 
   constructor(private database: DatabaseService) { }
 
-  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '', '', null, null, null);
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', null, '', '', null, null, null);
 
   ngOnInit() {
 

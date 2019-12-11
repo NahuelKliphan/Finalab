@@ -21,9 +21,12 @@ export class ListaTallerComponent implements OnInit {
   @Output() Borrar = new EventEmitter();
 
   eliminarTaller(id:number){
-    this.database.borrarTaller(id);
-    this.database.getTalleres();
-    this.Borrar.emit();
+    if(window.confirm('Si está vinculado a una revision se borrara tambien, esta seguro?')){
+
+      this.database.borrarTaller(id);
+      this.database.getTalleres();
+      this.Borrar.emit();
+    }
   }
 
   solicitarModificacion(unTaller:Taller){

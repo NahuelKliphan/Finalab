@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from 'src/app/model/Vehiculo';
 import { DatabaseService } from 'src/app/servicio/database.service';
+import { ImageService } from 'src/app/servicio/image.service';
 
 
 @Component({
@@ -10,12 +11,12 @@ import { DatabaseService } from 'src/app/servicio/database.service';
 })
 export class FormVehiculoComponent implements OnInit {
 
-  constructor(private database: DatabaseService) { }
+  constructor(private database: DatabaseService, private imageService: ImageService) { }
 
   ngOnInit() {
   }
 
-  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', '', '', '', null, null, null);
+  unVehiculo: Vehiculo = new Vehiculo(null, '', '', null, '', '', null , '', '', null, null, null);
 
   editar: boolean = false;
 
@@ -89,8 +90,19 @@ export class FormVehiculoComponent implements OnInit {
   }
 
   vaciar() {
-    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', '', '', '', null, null, null);
+    this.unVehiculo = new Vehiculo(null, '', '', null, '', '', null , '', '', null, null, null);
   }
+
+  
+
+  cargarFoto(files: any){
+    
+      
+    
+  }
+
+
+
 
 
 }

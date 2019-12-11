@@ -21,9 +21,12 @@ export class ListaVehiculoComponent implements OnInit {
   @Output() Borrar = new EventEmitter();
 
   eliminarVehiculo(id: number) {
-    this.database.borrarVehiculo(id);
-    this.database.getVehiculos();
-    this.Borrar.emit();
+    if(window.confirm('Se borraran todas sus revisiones tambien, esta seguro?'))
+    {
+      this.database.borrarVehiculo(id);
+      this.database.getVehiculos();
+      this.Borrar.emit();
+    }
   }
 
   solicitarModificacion(unVehiculo: Vehiculo) {
