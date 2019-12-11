@@ -14,8 +14,17 @@ export class NavBarComponent implements OnInit {
 
   busqueda: string;
 
-  Buscar(){
-    window.location.href = '/'+ this.busqueda;
+  rutas: string[] = ['home','vehiculo','taller','verVehiculo','revision']
+
+  Buscar() {
+    if(this.rutas.includes(this.busqueda)){
+      window.location.href = '/' + this.busqueda;
+    }else
+    {
+      alert('No se encontraron resultados');
+      this.busqueda = '';
+    }
+
   }
 
 }
