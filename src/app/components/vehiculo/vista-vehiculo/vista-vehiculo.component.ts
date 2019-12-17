@@ -21,12 +21,4 @@ export class VistaVehiculoComponent implements OnInit {
 
   }
 
-  irRevisiones() {
-    window.location.href = '/revision';
-  }
-
-  volver() {
-    window.location.href = '/vehiculo';
-  }
-
 }

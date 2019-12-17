@@ -34,7 +34,6 @@ export class ListaVehiculoComponent implements OnInit {
   }
 
   verDetalle(id: number) {
-    window.location.href = '/verVehiculo';
     localStorage.setItem('id', id.toString());
   }
 }

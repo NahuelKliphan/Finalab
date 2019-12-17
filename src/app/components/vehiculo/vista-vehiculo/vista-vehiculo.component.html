@@ -71,8 +71,8 @@
                 <textarea class="form-control" name="observaciones" rows="4" [(ngModel)]="unVehiculo.observaciones"
                     readonly></textarea>
 
-                    <button class="btn btn-success darespacio col-5 float-right" (click)="irRevisiones()">Revisiones</button>
-                    <button class="btn btn-outline-secondary darespacio col-5 float-left" (click)="volver()">Volver</button>
+                    <button class="btn btn-success darespacio col-5 float-right" routerLink="/revision" (click)="irRevisiones()">Revisiones</button>
+                    <button class="btn btn-outline-secondary darespacio col-5 float-left" routerLink="/vehiculo" (click)="volver()">Volver</button>
 
             </div>
 
